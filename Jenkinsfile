@@ -15,7 +15,7 @@ pipeline {
 
         stage('BUILD'){
             steps {
-                sh 'mvn clean package -DskipTests'
+                sh 'mvn clean install -DskipTests'
             }
             post {
                 success {
@@ -36,7 +36,7 @@ pipeline {
                 sh 'mvn verify -DskipUnitTests'
             }
         }
-/*
+
         stage ('CODE ANALYSIS WITH CHECKSTYLE'){
             steps {
                 sh 'mvn checkstyle:checkstyle'
@@ -47,7 +47,7 @@ pipeline {
                 }
             }
         }
-*/
+
         stage('CODE ANALYSIS with SONARQUBE') {
 
             environment {
