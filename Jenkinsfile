@@ -9,7 +9,6 @@ pipeline {
     environment {
         registry = "mbwork1/vprofileapp"
         registryCredential = "dockerhub"
-        ARTVERSION = "${env.BUILD_ID}"
     }
 
     stages{
